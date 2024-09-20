@@ -1,0 +1,165 @@
+% -*- mode: plain-tex; -*-
+\input amstex
+\input eplain
+\beginpackages
+  % |url.sty| provides the |\url| command which we will use to typeset
+  % a URL.  We request that |url.sty| be the version from June~27,
+  % 2005, or later, because earlier versions had problems interacting
+  % with plain \TeX.
+  \usepackage{url}[2015/06/27]
+  % |color.sty| provides support for colored text; all hyperlinks are
+  % automatically colored by Eplain when this package is loaded.  We give
+  % the |dvipsnames| option because we want to use named colors from the
+  % |dvips| graphics driver.
+  \usepackage[dvipsnames]{color}
+  % Finally, we load |graphicx.sty|, for the macros |\includegraphics|
+  % and |\rotatebox|.
+  \usepackage{graphicx}
+\endpackages
+\enablehyperlinks
+\hlopts{bwidth=0}
+%\hlopts[url]{colormodel=named,color=Black}
+\definecolor{mycolor}{rgb}{0, 0.5, 0.7}
+\definecolor{black}{rgb}{0, 0, 0}
+\font\titlefont=cmss10 at 40pt
+\font\subtitlefont=cmss10 at 25pt
+\font\authorfont=cmr10 at 18pt
+\font\chaptitlefont=cmr10 at 10pt
+\font\partfont=cmr10 at 12pt
+\font\sectionfont=cmr10 at 9pt
+\input hologo.sty
+\hologoSetup{break=false}
+\hologoLogoSetup{plainTeX}{variant=hyphen,hyphenbreak}
+\pageno = -1
+\begingroup
+  \nopagenumbers
+  \headline={\kern-2in\smash{\color{mycolor}\vrule width 100cm height 100cm depth
+30cm}}
+  ~~~
+  \vskip 2cm
+  \titlefont\centerline{\color{white}Geometry with
+Trigonometry}
+  \vskip 2mm
+  {\color{white}\hrule}
+  \vskip 2mm
+  \subtitlefont\raggedleft{\color{white}A problem-oriented approach}
+  \vskip 1.5cm
+  \authorfont\textindent{\rotatebox{90}{\color{white}Shiv Shankar Dayashru}}\centerline{\includegraphics[width=10cm]{images/nine-point-circle}}
+  \color{black}
+  \vfil
+  \eject
+\endgroup
+\color{black}
+\input macros
+\parshape 29
+0pt \hsize 0pt \hsize 0pt \hsize 0pt \hsize 0pt \hsize 0pt \hsize 0pt \hsize  0pt \hsize
+.3\hsize .7\hsize .3\hsize .7\hsize .3\hsize .7\hsize .3\hsize .7\hsize .3\hsize .7\hsize
+.3\hsize .7\hsize .3\hsize .7\hsize
+.3\hsize .4\hsize .3\hsize .4\hsize .3\hsize .4\hsize
+0pt .7\hsize 0pt .7\hsize 0pt .7\hsize 0pt .7\hsize 0pt .7\hsize
+0pt .7\hsize 0pt .7\hsize 0pt .7\hsize 0pt .7\hsize 0pt .7\hsize
+0pt \hsize
+
+\rewritetocfiletrue % always do a table of contents
+\completebooktrue
+\edgetabsfalse
+% Copyright page.
+%
+\noheadlinetrue
+\sinkage
+
+\bigskip
+
+\bigskip
+
+\vskip 2in
+\noindent Copyright \copyright{} 2024 Shiv Shankar Dayashru.
+
+\bigskip
+\noindent Permission is granted to copy, distribute and/or modify this
+document under the terms of the GNU Free Documentation License, Version
+1.3 or any later version published by the Free Software Foundation; with
+no Invariant Sections, with no Front-Cover texts, and with no Back-Cover
+texts.  A copy of the license is included in the chapter entitled ``GNU
+Free Documentation License''.
+
+\medskip\noindent
+Under the terms of the GFDL, anyone is allowed to modify and
+redistribute this material, and it is our hope that others will find it
+useful to do so.  That includes translations, either to other natural
+languages, or to other computer source or output formats.
+
+\medskip\noindent
+In our interpretation of the GFDL, you may also extract text from this
+book for use in a new document, as long as the new document is also
+under the GFDL, and as long as proper credit is given (as provided for
+in the license).
+\vfil
+\eject
+
+\noheadlinetrue
+\sinkage
+\centerline{\it Dedicated to my family.}
+\def\xref#1{\xrefn{#1}}
+
+\vfill\eject
+\noheadlinetrue
+\pagebreak
+
+% Contents.
+%
+% We never want to empty the file after doing the brief contents.
+%
+%\rewritetocfilefalse
+%
+
+%\ifcompletebook \global\rewritetocfiletrue \fi
+
+\pdfoutline goto name {contents} count -0 {Table of Contents}%
+\hldest {}{}{contents}%
+
+\frontchapter{Contents}
+
+%\contents
+\begingroup
+\raggedleft
+\chaptitlefont\hlstart{name}{}{preface}Preface \hlend\dotfill\hfil\xref{preface1}
+\vskip1mm
+\partfont\hlstart{name}{}{part1}I Geometry \hlend\dotfill\hfil\xref{part11}
+\vskip1mm
+\chaptitlefont\hlstart{name}{}{geometry}1.\ Geometry \hlend\hfil\dotfill\xref{geometry1}
+\vskip1mm
+\sectionfont\hlstart{name}{}{lines}1.1 Points and Lines \hlend\hfil\dotfill\xref{lines1}
+\vfill
+\endgroup
+\pagebreak
+
+\noheadlinetrue
+\pdfoutline goto name {preface} count -0 {Preface}%
+\hldest {}{}{preface}%
+\xrdef{preface1}
+
+{\input preface }
+
+\pagebreak
+\settabdepth{\bigtab}
+\noheadlinetrue
+\pageno=1
+\begingroup
+\topglue 0pt plus 1fill
+\pdfoutline goto name {part1} count -1 {I Geometry}%
+\hldest {}{}{part1}%
+\xrdef{part11}
+\titlefont\centerline{\color{mycolor}Part I}
+\vskip1cm
+\titlefont\centerline{\color{mycolor}Geometry}
+\vfill
+\eject
+\endgroup
+
+\input geometry
+
+\backmatter
+\input fdl
+
+\bye
