@@ -18,7 +18,7 @@
 \endpackages
 \enablehyperlinks
 \hlopts{bwidth=0}
-%\hlopts[url]{colormodel=named,color=Black}
+
 \definecolor{mycolor}{rgb}{0, 0.5, 0.7}
 \definecolor{black}{rgb}{0, 0, 0}
 \font\titlefont=cmss10 at 40pt
@@ -27,6 +27,12 @@
 \font\chaptitlefont=cmr10 at 10pt
 \font\partfont=cmr10 at 12pt
 \font\sectionfont=cmr10 at 9pt
+
+\pdfpagewidth=210mm
+\pdfpageheight=297mm
+\paperwidth=210mm
+\paperheight=297mm
+
 \pageno = -1
 \begingroup
   \nopagenumbers
@@ -155,6 +161,7 @@ in the license).
 \endgroup
 
 \input geometry
+
 
 \backmatter
 \input fdl
