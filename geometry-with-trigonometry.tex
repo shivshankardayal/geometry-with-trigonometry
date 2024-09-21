@@ -14,7 +14,7 @@
   \usepackage[dvipsnames]{color}
   % Finally, we load |graphicx.sty|, for the macros |\includegraphics|
   % and |\rotatebox|.
-  \usepackage{graphicx}
+  %\usepackage{graphicx}
 \endpackages
 \enablehyperlinks
 \hlopts{bwidth=0}
@@ -32,6 +32,7 @@
 \pdfpageheight=297mm
 \paperwidth=210mm
 \paperheight=297mm
+\input macros
 
 \pageno = -1
 \begingroup
@@ -47,7 +48,7 @@ Trigonometry}
   \vskip 2mm
   \subtitlefont\raggedleft{\color{white}A problem-oriented approach}
   \vskip 1.5cm
-  \centerline{\includegraphics[width=10cm]{images/nine-point-circle}}
+  \cfig{cp}{images/nine-point-circle.pdf}{}{10cm}
   \vfill
   \authorfont\color{white}Shiv Shankar Dayashru
   \color{black}
@@ -55,7 +56,6 @@ Trigonometry}
   \eject
 \endgroup
 \color{black}
-\input macros
 \rewritetocfiletrue % always do a table of contents
 \completebooktrue
 \edgetabsfalse
