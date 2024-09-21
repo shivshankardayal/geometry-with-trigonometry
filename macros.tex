@@ -2351,3 +2351,21 @@
 \color{mycolor}\noindent Fig.~\the\fignumber.\ #3\color{black}%
 \medskip
 }
+\def\cfig#1#2#3#4{%
+\global\advance\fignumber by 1
+\pdfximage width #4{#2}
+\centerline{\pdfrefximage\pdflastximage}
+\hldesttype[definexref]{fitr}%
+\hldestopts[definexref]{width=\wd\imgbox,height=0pt,depth=\ht\imgbox}%
+\definexref{#1}{Fig. \the\fignumber}{figure}%
+\centerline{\color{mycolor}\noindent Fig.~\the\fignumber.\ #3\color{black}}%
+}
+\def\lfig#1#2#3#4{%
+\global\advance\fignumber by 1
+\pdfximage width #4{#2}
+\pdfrefximage\pdflastximage
+\hldesttype[definexref]{fitr}%
+\hldestopts[definexref]{width=\wd\imgbox,height=0pt,depth=\ht\imgbox}%
+\definexref{#1}{Fig. \the\fignumber}{figure}%
+\color{mycolor}\noindent Fig.~\the\fignumber.\ #3\color{black}%
+}
