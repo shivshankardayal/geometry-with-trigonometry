@@ -1,5 +1,7 @@
 settings.outformat = "pdf";
-size(3cm,0);
+settings.tex="lualatex";
+settings.prc = false;
+texpreamble("\usepackage{unicode-math}\setmathfont{TeX Gyre DejaVu Math}");
 
 draw((0, 0) -- (3cm, 0), Arrows);
 dot((0.5cm, 0));

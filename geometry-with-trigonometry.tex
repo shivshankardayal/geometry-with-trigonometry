@@ -1,32 +1,27 @@
 % -*- mode: plain-tex; -*-
+\input luamplib.sty
+\input luaotfload.sty
+\input luaotfload.sty\protected\def\pdfdest {\pdfextension dest }
+\protected\def\pdfoutline {\pdfextension outline}
+\protected\def\pdfstartlink {\pdfextension startlink}
+\protected\def\pdfendlink {\pdfextension endlink}
 \input amstex
 \input eplain
 \beginpackages
-  % |url.sty| provides the |\url| command which we will use to typeset
-  % a URL.  We request that |url.sty| be the version from June~27,
-  % 2005, or later, because earlier versions had problems interacting
-  % with plain \TeX.
   \usepackage{url}[2015/06/27]
-  % |color.sty| provides support for colored text; all hyperlinks are
-  % automatically colored by Eplain when this package is loaded.  We give
-  % the |dvipsnames| option because we want to use named colors from the
-  % |dvips| graphics driver.
   \usepackage[dvipsnames]{color}
-  % Finally, we load |graphicx.sty|, for the macros |\includegraphics|
-  % and |\rotatebox|.
-  %\usepackage{graphicx}
 \endpackages
 \enablehyperlinks
 \hlopts{bwidth=0}
 
 \definecolor{mycolor}{rgb}{0, 0.45, 0.63}
 \definecolor{black}{rgb}{0, 0, 0}
-\font\titlefont=cmss10 at 40pt
-\font\subtitlefont=cmss10 at 25pt
-\font\authorfont=cmr10 at 18pt
-\font\chaptitlefont=cmr10 at 10pt
-\font\partfont=cmr10 at 12pt
-\font\sectionfont=cmr10 at 9pt
+\font\titlefont="[/usr/share/texmf-dist/fonts/opentype/google/roboto/Roboto-Regular.otf]" at 40pt
+\font\subtitlefont="[/usr/share/texmf-dist/fonts/opentype/google/roboto/Roboto-Regular.otf]" at 25pt
+\font\authorfont="[/usr/share/texmf-dist/fonts/opentype/google/roboto/Roboto-Regular.otf]" at 18pt
+\font\chaptitlefont="[/usr/share/texmf-dist/fonts/truetype/public/dejavu/DejaVuSerif.ttf]" at 10pt
+\font\partfont="[/usr/share/texmf-dist/fonts/truetype/public/dejavu/DejaVuSerif.ttf]" at 12pt
+\font\sectionfont="[/usr/share/texmf-dist/fonts/truetype/public/dejavu/DejaVuSerif.ttf]" at 9pt
 
 \input macros
 
@@ -119,9 +114,11 @@ in the license).
 \vskip1mm
 \partfont\hlstart{name}{}{part1}I Geometry \hlend\dotfill\hfil\xref{part11}
 \vskip1mm
-\chaptitlefont\hlstart{name}{}{geometry}1.\ Geometry \hlend\hfil\dotfill\xref{geometry1}
+\chaptitlefont\hlstart{name}{}{introduction}1.\ Introduction \hlend\hfil\dotfill\xref{introduction1}
 \vskip1mm
-\sectionfont\hlstart{name}{}{lines}1.1 Points, Lines and Planes \hlend\hfil\dotfill\xref{lines1}
+\sectionfont\hlstart{name}{}{edap}1.1\ Euclid's Definitions, Axioms and Postulates\hlend\hfil\dotfill\xref{edap1}
+\vskip1mm
+\chaptitlefont\hlstart{name}{}{lines}2.\ Points, Lines and Planes \hlend\hfil\dotfill\xref{lines1}
 \vfill
 \endgroup
 \pagebreak
@@ -139,7 +136,7 @@ in the license).
 \pageno=1
 \begingroup
 \topglue 0pt plus 1fill
-\pdfoutline goto name {part1} count -1 {I Geometry}%
+\pdfoutline goto name {part1} count 2 {I Geometry}%
 \hldest {}{}{part1}%
 \xrdef{part11}
 \titlefont\centerline{\color{mycolor}Part I}
@@ -149,8 +146,9 @@ in the license).
 \eject
 \endgroup
 
-\input geometry
+\input introduction
 
+\input plp
 
 \backmatter
 \input fdl

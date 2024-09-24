@@ -9,43 +9,43 @@
 % fonts for the original printed book, but for the free edition, we
 % stick to Computer Modern.
 % -----------------------------------------------------------------------
-% 
+%
 % We used Computer Modern for the main text and math, and Zapf Humanist
 % (i.e., Optima) for heads.  (bs00015 is Optima Roman, 16 italic, 17
-% bold, 18 bold italic.)  
-% 
+% bold, 18 bold italic.)
+%
 % First we define all of the fonts we use for any purpose, in terms of the
 % font files.  Later we define fonts functionally, using \let or \def.
 
 % Computer Modern fonts.
 %
-\font\fiverm = cmr5
-\font\eightrm = cmr8
-\font\ninerm = cmr9 % Glue pictures, small caps for ASCII.
+\font\fiverm = "[/usr/share/texmf-dist/fonts/truetype/public/dejavu/DejaVuSerif.ttf]" at 5pt
+\font\eightrm = "[/usr/share/texmf-dist/fonts/truetype/public/dejavu/DejaVuSerif.ttf]" at 8pt
+\font\ninerm = "[/usr/share/texmf-dist/fonts/truetype/public/dejavu/DejaVuSerif.ttf]" at 9pt % Glue pictures, small caps for ASCII.
 %\font\tenrm = xcmr10 % with our kerning
-\font\tenrm = cmr10 % don't have the xcmr10 source any more
-\font\oldtenrm = cmr10 % straight CM
-\font\twelverm = cmr12
-\font\twentysixrm = cmr10 at 26pt
+\font\tenrm = "[/usr/share/texmf-dist/fonts/truetype/public/dejavu/DejaVuSerif.ttf]" at 9pt % don't have the xcmr10 source any more
+\font\oldtenrm = "[/usr/share/texmf-dist/fonts/truetype/public/dejavu/DejaVuSerif.ttf]" at 9pt % straight CM
+\font\twelverm  = "[/usr/share/texmf-dist/fonts/truetype/public/dejavu/DejaVuSerif.ttf]" at 12pt
+\font\twentysixrm = "[/usr/share/texmf-dist/fonts/opentype/google/roboto/Roboto-Regular.otf"] at 26pt
 %
-\font\eightit = cmti8
-\font\nineit = cmti9
-\font\tenit = cmti10
+\font\eightit = "[/usr/share/texmf-dist/fonts/truetype/public/dejavu/DejaVuSerif-Italic.ttf]" at 8pt
+\font\nineit = "[/usr/share/texmf-dist/fonts/truetype/public/dejavu/DejaVuSerif-Italic.ttf]" at 9pt
+\font\tenit = "[/usr/share/texmf-dist/fonts/truetype/public/dejavu/DejaVuSerif-Italic.ttf]" at 9pt
 %
-\font\eighttt = cmtt8
-\font\eleventt = cmtt10 at 11pt
-\font\twelvett = cmtt10 scaled \magstep2
+\font\eighttt = "[/usr/share/texmf-dist/fonts/opentype/google/roboto/RobotoMono-Regular.otf]" at 8pt
+\font\eleventt = "[/usr/share/texmf-dist/fonts/opentype/google/roboto/RobotoMono-Regular.otf]" at 11pt
+\font\twelvett = "[/usr/share/texmf-dist/fonts/opentype/google/roboto/RobotoMono-Regular.otf]" at 12pt scaled \magstep2
 %
 \font\tenbt = cmtt10
 %
-\font\elevensf = cmss10 scaled\magstephalf
-\font\fourteensf = cmss10 scaled\magstep2
+\font\elevensf = "[/usr/share/texmf-dist/fonts/opentype/google/roboto/Roboto-Regular.otf"] scaled\magstephalf
+\font\fourteensf = "[/usr/share/texmf-dist/fonts/opentype/google/roboto/Roboto-Regular.otf"] scaled\magstep2
 %
-\font\eightbf = cmbx8
-\font\tenbf = cmbx10
-\font\elevenbf = cmbx10 scaled \magstephalf
-\font\twelvebf = cmbx12
-\font\thirtysixbf = cmbx10 at 36pt
+\font\eightbf = "[/usr/share/texmf-dist/fonts/opentype/google/roboto/Roboto-Bold.otf"] at 8pt
+\font\tenbf = "[/usr/share/texmf-dist/fonts/opentype/google/roboto/Roboto-Bold.otf"] at 10pt
+\font\elevenbf = "[/usr/share/texmf-dist/fonts/opentype/google/roboto/Roboto-Bold.otf"] at 10pt scaled \magstephalf
+\font\twelvebf = "[/usr/share/texmf-dist/fonts/opentype/google/roboto/Roboto-Bold.otf"] at 12pt
+\font\thirtysixbf = "[/usr/share/texmf-dist/fonts/opentype/google/roboto/Roboto-Bold.otf"] at 36pt
 %
 \font\tenbi = cmbxti10
 \font\elevenbi= cmbxti10 scaled \magstephalf
@@ -70,7 +70,7 @@
 % \font\tenoptbi = bs0018 at 10pt
 % \font\elevenoptbi = bs0018 at 11pt
 % \font\fourteenoptbi = bs0018 at 14pt
- 
+
 % Palatino fonts.
 %
 \font\tenpal = pplr
@@ -80,7 +80,7 @@
 %\font\tenpalbi = bs0026
 
 % Logo and picture fonts.
-% 
+%
 \font\eightlogo = logo8
 \font\logosl = logosl10
 \font\handfont = pzdr
@@ -98,7 +98,7 @@
 
 % This should only be called when \rm et al. are going to be defined
 % directly.
-% 
+%
 \def\clearfonts{\let\rm = \undefinedfont \let\bf = \undefinedfont
    \let\it = \undefinedfont \let\bi = \undefinedfont
    \let\tt = \undefinedfont \let\bt = \undefinedfont
@@ -109,7 +109,7 @@
 % We only need to assign to \fam if the font is going to be used in math
 % mode, which isn't the case with any of these.  \rm, \it, \sl, \bf, and
 % \tt are defined in plain.
-% 
+%
 \def\bi{\tenbi}
 
 \def\mapquotes{\catcode`` = \active \catcode`' = \active}
@@ -125,7 +125,7 @@
 \def\sc{\tensc}
 
 % Text fonts.
-% 
+%
 \def\textfonts{%
   \def\rm{\fam0\tenrm}%
   \textfont0=\tenrm \scriptfont0=\sevenrm \scriptscriptfont0=\fiverm
@@ -145,7 +145,7 @@
 
 
 % Footnote fonts.  We generally use eight point.
-% 
+%
 \def\footnotefonts{%
   \def\rm{\fam0\eightrm}%
   \textfont0=\eightrm \scriptfont0=\sevenrm \scriptscriptfont0=\fiverm
@@ -165,29 +165,29 @@
 
 % Fonts for the example titles.  They are defined in the first example,
 % also.
-% 
+%
 
-\def\exampletitlefonts{\clearfonts 
+\def\exampletitlefonts{\clearfonts
    \let\bf = \elevenbf
    \let\bi = \elevenbi
    \baselineskip = 13pt \bf
 }
 
 % Fonts for the subsection titles.
-% 
+%
 \def\subsectionfonts{\clearfonts \let\sf = \elevensf
    \baselineskip = 12pt \sf
 }
 
 
 % Fonts for the section titles.
-% 
+%
 \def\sectionfonts{\clearfonts \let\sf = \fourteensf
    \baselineskip = 16pt \sf
 }
 
 % Fonts for the chapter titles.
-% 
+%
 \let\chapternumeralfont = \thirtysixbf
 
 \def\chapterfonts{\clearfonts \let\bf = \twentysixrm
@@ -195,7 +195,7 @@
 }
 
 % Fonts for the table of contents.
-% 
+%
 \def\shorttocfonts{\clearfonts \let\rm = \twelverm
    \baselineskip = 20pt \rm
 }
@@ -206,7 +206,7 @@
 }
 
 % Fonts for the index.
-% 
+%
 
 \def\indexfonts{\clearfonts
    \let\rm = \eightrm
@@ -222,7 +222,7 @@
 }
 
 % Fonts for the inside back cover.
-% 
+%
 \def\conceptpagefonts{\clearfonts
    \let\rm = \ninerm
    \let\sc = \eightrm

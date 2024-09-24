@@ -406,6 +406,7 @@
 % explaining, is included, it goes on the outside.
 %
 \headline = {%
+    \color{black}
    % Produce the timestamp
    \ifnoheadline
       \hfil
@@ -420,7 +421,8 @@
          {\tenit
           \chaptername
           \ifnum\pageno>0\ifback\else
-            \quad $\backslash$\quad\S\the\chapterno
+            %\quad $\backslash$\quad\S\the\chapterno
+            \quad \S\the\chapterno
           \fi\fi
          }%
       \fi
@@ -2304,19 +2306,23 @@
 \newbox\imgbox
 \def\cfig#1#2#3#4{%
 \global\advance\fignumber by 1
-\pdfximage width #4{#2}
-\centerline{\pdfrefximage\pdflastximage}
-\hldesttype[definexref]{fitr}%
+\saveimageresource width #4{#2}
+\centerline{\useimageresource\lastsavedimageresourceindex}
+\hldesttype[definexref]{fith}%
 \hldestopts[definexref]{width=\wd\imgbox,height=0pt,depth=\ht\imgbox}%
-\definexref{#1}{Fig. \the\fignumber}{figure}%
-\centerline{\color{mycolor}\noindent Fig.~\the\fignumber.\ #3\color{black}}%
+\definexref{#1}{Fig.~\the\fignumber}{figure}%
+\centerline{\color{mycolor}\noindent Fig.\ \the\fignumber.\ #3\color{black}}%
 }
 \def\lfig#1#2#3#4{%
 \global\advance\fignumber by 1
-\pdfximage width #4{#2}
-\pdfrefximage\pdflastximage
-\hldesttype[definexref]{fitr}%
+\saveimageresource width #4{#2}
+\useimageresource\lastsavedimageresourceindex
+%\pdfximage width #4{#2}
+%\pdfrefximage\pdflastximage
+\hldesttype[definexref]{fith}%
 \hldestopts[definexref]{width=\wd\imgbox,height=0pt,depth=\ht\imgbox}%
-\definexref{#1}{Fig. \the\fignumber}{figure}%
-\color{mycolor}\noindent Fig.~\the\fignumber.\ #3\color{black}%
+\definexref{#1}{Fig.~\the\fignumber}{figure}%
+\color{mycolor}\noindent Fig.\ \the\fignumber.\ #3\color{black}%
 }
+
+\def\numberedprintmarker#1{\llap{#1. \listmarkerspace}}%
